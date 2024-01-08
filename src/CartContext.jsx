@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export const CartContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 export const CartProvider = ( {children} ) => {
   const [cartData, setCartData] = useState([]);
 
