@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export const CartContext = createContext();
 
-export const CartProvider = ({ children }) => {
+export const CartProvider = ( {children} ) => {
   const [cartData, setCartData] = useState([]);
 
   const updateCartData = (newData) => {
@@ -49,25 +49,3 @@ export const CartProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
-
-
-
-
-
-// const updateCartData = (newData) => {
-//   setCartData((prevData) => {
-//     const existingItem = prevData.find((item) => item.currentProduct.id === newData.currentProduct.id);
-//     if (existingItem) {
-//       const updatedArray = prevData.map((item) => {
-//         if (item.currentProduct.id === newData.currentProduct.id) {
-//           return { ...item, itemQuantity: item.itemQuantity + newData.itemQuantity };
-//         } else {
-//           return item;
-//         }
-//       });
-//       return updatedArray;
-//     } else {
-//       return [...prevData, newData];
-//     }
-//   });
-// };
